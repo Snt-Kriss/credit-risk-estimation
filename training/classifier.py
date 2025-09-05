@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import mlflow
+import json
 from pandas import DataFrame, Series
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.svm import SVC
@@ -105,7 +106,13 @@ if __name__ == "__main__":
         df_cm.index.name= 'Actual'
         df_cm.columns.name= 'Predicted'
         sns.heatmap(df_cm, cmap='Blues', annot=True, annot_kws={'size': 16})
-        plt.savefig('confusion_matrix.png')        
+        plt.savefig('confusion_matrix.png') 
+
+        metrics={
+            "recall": recall
+        }
+        with open("metrics.json", 'w') as f:
+            json.dump(metrics, f)
 
         model_name= 'svc-credit-risk-classifier'
         params= {
