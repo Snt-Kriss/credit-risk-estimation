@@ -49,7 +49,7 @@ In contranst, precision, or Type I error, leads to rejecting a good customer, bu
 2. Clone the project
 
     ```bash
-    git clone https://github.com/Snt-Kriss/credit-risk-estimation.git
+    git clone https://github.com/crispus-munene/credit-risk-estimation.git
     ```
 
 3. Enter the project directory
