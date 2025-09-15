@@ -6,3 +6,6 @@ pandas
 pytest
 scikit-learn
 seaborn
+fastapi
+pydantic
+fastapi-cache2
