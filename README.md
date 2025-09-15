@@ -18,7 +18,9 @@ The microservice is built based on the following requirements:
     - Users will be able to key in their information requested, and the system will classify them whether they are risky or not.
 
 ***Model Management***: MLflow tool has been used as the model artifact and metadata storage layer in the ML system. The ml system checks for models available for use in production in the MLflow server, retrieves it, and caches the model for use and reuse during the session if desired.
+
 ***Model Serving***: FastAPI web framework has been used to wrap the serving logic. The serving logic is in the serve/src folder.
+
 ***Continuous Intergration***: Every change to data, code or model is automatically tested so that the pipeline does not break. The model recall metric is set to at least 85% to ensure reduction of Type II error. The tests are in the tests folder. Github actions is used to set up the CI pipeline.
 
 ### Quick glance at the model results
@@ -70,11 +72,6 @@ In contranst, precision, or Type I error, leads to rejecting a good customer, bu
 6. Running the training pipeline:
     ```bash
     python training/classifier.py
-    ```
-
-7. Run the FastAPI app
-    ```bash
-
     ```
 
 8. Run the mlflow ui
